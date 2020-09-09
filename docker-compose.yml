@@ -1,0 +1,14 @@
+version: "2"
+services:
+  app:
+    container_name: StockMarketData
+    build: .
+    ports:
+      - "9090:9090"
+    links:
+      - mongo
+  mongo:
+    container_name: StockMarketDataMongo
+    image: mongo
+    ports:
+      - "27017:27017"
